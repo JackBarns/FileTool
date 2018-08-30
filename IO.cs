@@ -10,6 +10,8 @@ namespace FileTool.Modules
     {
         static public void setFileNames(string path, string prefix, string fileType = "png") // This function renames all files in the selected directory "path"
         {
+            if (fileType == "" || fileType is null) fileType = "png";
+            
             ConsoleColor current_colour = Console.ForegroundColor;
             DirectoryInfo d = new DirectoryInfo(path);
             // DirectoryInfo object is required to access the DirectoryINfo.GetFiles() function.
